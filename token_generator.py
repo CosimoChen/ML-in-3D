@@ -3,7 +3,7 @@ import random
 import time
 
 # 1. 配置你的 Gemini API Key
-GOOGLE_API_KEY = "AIzaSyBFJ2mpaLi-IY_Z4tQtP-QtW6t2zWkGSl0"
+GOOGLE_API_KEY = ""
 client =  genai.Client(api_key=GOOGLE_API_KEY)
 
 GEMINI_MODEL = "gemini-2.5-flash"  # 选择 Gemini 模型
@@ -68,7 +68,7 @@ def generate_gemini_batch(batch_size):
     try:
         response = client.models.generate_content(
             model=GEMINI_MODEL,
-            input=prompt,
+            contents=prompt,
         )
         return response.text.strip()
     except Exception as e:
